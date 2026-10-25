@@ -269,12 +269,15 @@ background-repeat: no-repeat;
   background: #72e5ac;
 }
 
+
 .hero h1 {
   margin: 0;
+  color: #ffffff;
   font-size: clamp(42px, 5.5vw, 70px);
   font-weight: 800;
   line-height: 1.13;
   letter-spacing: -3px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 .hero h1 span {
@@ -398,43 +401,47 @@ background-repeat: no-repeat;
   line-height: 1.9;
 }
 
+
+
+/* Common problem cards */
 .problem-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  max-width: 1180px;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .problem-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  min-height: 260px;
-  padding: 27px;
-  border: 1px solid #e9eef5;
-  border-radius: 17px;
+  align-items: center;
+  min-width: 0;
+  min-height: 150px;
+  padding: 16px 8px;
+  border: 1px solid #e5ebf3;
+  border-radius: 12px;
   background: #ffffff;
-  box-shadow: 0 8px 25px rgba(24, 47, 81, 0.035);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(24, 47, 81, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .problem-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(24, 47, 81, 0.09);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(24, 47, 81, 0.1);
 }
 
 .problem-icon {
   display: grid;
   place-items: center;
-  width: 53px;
-  height: 53px;
-  margin-bottom: 19px;
-  border-radius: 15px;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 10px;
+  border-radius: 12px;
   background: #edf5ff;
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .problem-category {
@@ -446,16 +453,17 @@ background-repeat: no-repeat;
 }
 
 .problem-card h3 {
-  margin: 10px 0;
+  margin: 4px 0 8px;
   color: var(--text);
-  font-size: 17px;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .problem-card p {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .text-link {
@@ -464,8 +472,12 @@ background-repeat: no-repeat;
   gap: 8px;
   margin-top: auto;
   color: #146bcf;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
+}
+
+.text-link:hover {
+  color: #0a4389;
 }
 
 .text-link:hover {
@@ -1116,5 +1128,45 @@ background-repeat: no-repeat;
   .hero {
     background-position: 45% center;
     background-size: cover;
+  }
+}
+
+/* HostelCare responsive homepage */
+
+@media (max-width: 1100px) {
+  .problem-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .problem-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .problem-card {
+    min-height: 125px;
+    padding: 12px 8px;
+  }
+
+  .problem-card h3 {
+    font-size: 13px;
+  }
+
+  .problems-section {
+    padding: 28px 5%;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .section,
+  .how-section {
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 }

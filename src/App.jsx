@@ -50,13 +50,16 @@ const hostels = [
   "Other / Not Listed"
 ];
 
+
 const problems = [
   ["🌀", "Fan Not Working", "Report a broken fan or regulator."],
-  ["📶", "Wi-Fi Not Working", "Report internet or connectivity problems."],
-  ["🚰", "Water Supply", "Report broken taps, leaks, or water shortages."],
-  ["💡", "Lights Not Working", "Report faulty lights and switches."],
-  ["🚿", "Bathroom Problems", "Report plumbing and drainage issues."],
-  ["🧹", "Cleaning Required", "Report hostel cleaning problems."]
+  ["📶", "Wi-Fi Not Working", "Report internet connectivity problems."],
+  ["🚰", "Water Cooler Not Working", "Report a broken water cooler."],
+  ["💧", "No Water Supply", "Report water shortages."],
+  ["💡", "Light Not Working", "Report faulty lights and switches."],
+  ["🔧", "Tap / Plumbing Issue", "Report leaking taps and plumbing issues."],
+  ["🛏️", "Broken Furniture", "Report damaged beds, chairs, or tables."],
+  ["•••", "Other Problem", "Report any other hostel issue."]
 ];
 
 
@@ -89,10 +92,15 @@ function Header() {
         }}>How It Works</a>
       </nav>
 
-      <div className="header-actions">
-        <a className="header-login" href="#/student-login">Student Login</a>
-        <a className="button button-small" href="#/register">Get Started</a>
-      </div>
+      
+<div className="header-actions">
+  <a className="header-login" href="#/student-login">
+    Student Login
+  </a>
+  <a className="button button-small" href="#/admin-login">
+    Admin Login
+  </a>
+</div>
     </header>
   );
 }
