@@ -62,7 +62,7 @@ const problems = [
 function Header() {
   return (
     <header className="site-header">
-      <a className="brand" href="/">
+      <a className="brand" href="#/">
         <span className="brand-icon">H</span>
         <span className="brand-text">
           <strong>HostelCare</strong>
@@ -71,14 +71,14 @@ function Header() {
       </a>
 
       <nav className="navigation">
-        <a href="/">Home</a>
-        <a href="/#problems">Common Problems</a>
-        <a href="/#how-it-works">How It Works</a>
+        <a href="#/">Home</a>
+        <a href="#/#problems">Common Problems</a>
+        <a href="#/#how-it-works">How It Works</a>
       </nav>
 
       <div className="header-actions">
-        <a className="header-login" href="/student-login">Student Login</a>
-        <a className="button button-small" href="/register">Get Started</a>
+        <a className="header-login" href="#/student-login">Student Login</a>
+        <a className="button button-small" href="#/register">Get Started</a>
       </div>
     </header>
   );
@@ -87,7 +87,7 @@ function Header() {
 function Footer() {
   return (
     <footer className="site-footer">
-      <a className="brand footer-brand" href="/">
+      <a className="brand footer-brand" href="#/">
         <span className="brand-icon">H</span>
         <span className="brand-text">
           <strong>HostelCare</strong>
@@ -130,10 +130,10 @@ function HomePage() {
             </p>
 
             <div className="hero-buttons">
-              <a href="/register" className="button button-primary">
+              <a href="#/register" className="button button-primary">
                 Register as Student →
               </a>
-              <a href="/student-login" className="button button-light">
+              <a href="#/student-login" className="button button-light">
                 Student Login
               </a>
             </div>
@@ -178,7 +178,7 @@ function HomePage() {
                 <div className="problem-icon">{icon}</div>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <a href="/register" className="text-link">Report a problem →</a>
+                <a href="#/register" className="text-link">Report a problem →</a>
               </article>
             ))}
           </div>
@@ -218,11 +218,11 @@ function HomePage() {
             <h2>A better hostel experience starts here.</h2>
             <p>Report maintenance problems and keep track of your complaints.</p>
             <div className="account-buttons">
-              <a href="/register" className="button button-primary">Student Registration →</a>
-              <a href="/admin-register" className="button button-light">Admin Registration</a>
+              <a href="#/register" className="button button-primary">Student Registration →</a>
+              <a href="#/admin-register" className="button button-light">Admin Registration</a>
             </div>
             <div className="admin-access">
-              Administrator? <a href="/admin-login">Admin Login</a>
+              Administrator? <a href="#/admin-login">Admin Login</a>
             </div>
           </div>
         </section>
@@ -298,7 +298,7 @@ function RegistrationPage({ admin = false }) {
               </>
             )}
           </ul>
-          <a href="/" className="text-link">← Back to homepage</a>
+          <a href="#/" className="text-link">← Back to homepage</a>
         </section>
 
         <section className="auth-card">
@@ -375,9 +375,9 @@ function RegistrationPage({ admin = false }) {
 
           <div className="auth-switch">
             {admin ? (
-              <>Already registered? <a href="/admin-login">Admin Login</a></>
+              <>Already registered? <a href="#/admin-login">Admin Login</a></>
             ) : (
-              <>Already registered? <a href="/student-login">Student Login</a></>
+              <>Already registered? <a href="#/student-login">Student Login</a></>
             )}
           </div>
         </section>
@@ -419,16 +419,16 @@ function LoginPage({ admin = false }) {
               <label htmlFor="loginPassword">Password *</label>
               <input id="loginPassword" type="password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" placeholder="Enter your password" required />
             </div>
-            <div className="forgot-password"><a href="/forgot-password">Forgot password?</a></div>
+            <div className="forgot-password"><a href="#/forgot-password">Forgot password?</a></div>
             {message && <div className="form-message" role="status">{message}</div>}
             <button className="button button-primary submit-button" type="submit">Login →</button>
           </form>
 
           <div className="auth-switch">
             {admin ? (
-              <>Need admin access? <a href="/admin-register">Register as Admin</a></>
+              <>Need admin access? <a href="#/admin-register">Register as Admin</a></>
             ) : (
-              <>New student? <a href="/register">Create an account</a></>
+              <>New student? <a href="#/register">Create an account</a></>
             )}
           </div>
         </section>
@@ -464,7 +464,7 @@ function ForgotPasswordPage() {
             {message && <div className="form-message" role="status">{message}</div>}
             <button className="button button-primary submit-button" type="submit">Request Reset Link</button>
           </form>
-          <div className="auth-switch"><a href="/student-login">← Back to Student Login</a></div>
+          <div className="auth-switch"><a href="#/student-login">← Back to Student Login</a></div>
         </section>
       </main>
       <Footer />
@@ -479,7 +479,7 @@ function NotFoundPage() {
       <main className="not-found">
         <h1>Page not found</h1>
         <p>The requested page could not be found.</p>
-        <a className="button button-primary" href="/">Return Home</a>
+        <a className="button button-primary" href="#/">Return Home</a>
       </main>
       <Footer />
     </>
