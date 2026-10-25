@@ -59,6 +59,7 @@ const problems = [
   ["🧹", "Cleaning Required", "Report hostel cleaning problems."]
 ];
 
+
 function Header() {
   return (
     <header className="site-header">
@@ -72,8 +73,20 @@ function Header() {
 
       <nav className="navigation">
         <a href="#/">Home</a>
-        <a href="#/#problems">Common Problems</a>
-        <a href="#/#how-it-works">How It Works</a>
+        <a href="#/ " onClick={(event) => {
+          event.preventDefault();
+          window.location.hash = "/";
+          setTimeout(() => {
+            document.getElementById("problems")?.scrollIntoView({ behavior: "smooth" });
+          }, 200);
+        }}>Common Problems</a>
+        <a href="#/" onClick={(event) => {
+          event.preventDefault();
+          window.location.hash = "/";
+          setTimeout(() => {
+            document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
+          }, 200);
+        }}>How It Works</a>
       </nav>
 
       <div className="header-actions">
