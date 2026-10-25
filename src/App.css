@@ -215,18 +215,18 @@ select:focus-visible {
 
   background-color: #0d294d;
 
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(5, 24, 48, 0.94) 0%,
-      rgba(7, 34, 66, 0.82) 47%,
-      rgba(8, 39, 75, 0.48) 100%
-    ),
-    url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/University_campus%2C_Aligarh_Muslim_University.jpg/1200px-University_campus%2C_Aligarh_Muslim_University.jpg");
+  
+  
+background-image:
+  linear-gradient(
+    rgba(5, 24, 48, 0.55),
+    rgba(5, 24, 48, 0.55)
+  ),
+  url("https://photos.wikimapia.org/p/00/03/24/55/64_big.jpg");
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
 }
 
 .hero-overlay {
@@ -1110,5 +1110,11 @@ select:focus-visible {
 
   .auth-card {
     padding: 19px 15px;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    background-position: 45% center;
+    background-size: cover;
   }
 }
