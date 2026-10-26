@@ -23,30 +23,6 @@ const hostels = [
   "Sir Syed Hall South",
   "Sir Ziauddin Hall",
   "Viqar-ul-Mulk Hall",
-  "Agha Khan Hostel",
-  "Amin Hostel",
-  "Bhopal House",
-  "Central Hostel",
-  "Chakraverti Hostel",
-  "Dhyan Chand Hostel",
-  "East Wing Hostel",
-  "Hali Hostel",
-  "Hamid Manzil Hostel",
-  "Hasrat Mohani Hostel",
-  "Jubilee Hostel",
-  "Kashmir House",
-  "MacDonnell Hostel",
-  "Majaz Hostel",
-  "Morrison Court",
-  "Nawab Ismail Khan Hostel",
-  "Nazir Ahmad Hostel",
-  "Osmania Hostel",
-  "Qidwai Hostel",
-  "Rasheed Ahmed Siddiqui Hostel",
-  "Shibli Hostel",
-  "SME Hostel",
-  "SMN Hostel",
-  "Zafar Ahmed Siddiqui Hostel",
   "Other / Not Listed"
 ];
 
@@ -93,14 +69,50 @@ function Header() {
       </nav>
 
       
+
 <div className="header-actions">
   <a className="header-login" href="#/student-login">
     Student Login
   </a>
+
   <a className="button button-small" href="#/admin-login">
     Admin Login
   </a>
-</div>
+
+  <div className="settings-wrapper">
+    <button
+      className="settings-button"
+      onClick={() => {
+        const menu = document.getElementById("language-settings");
+        menu.hidden = !menu.hidden;
+      }}
+      type="button"
+    >
+      <span className="settings-icon">⚙️</span>
+      <span>Settings</span>
+    </button>
+
+    <div id="language-settings" className="language-settings" hidden>
+     <label htmlFor="site-language">
+      Language / भाषा / زبان
+      </label>
+
+      <select
+      id="site-language"
+      value={localStorage.getItem("hostelcare-language") || "en"}
+      onChange={(event) => {
+      const selectedLanguage = event.target.value;
+      localStorage.setItem("hostelcare-language", selectedLanguage);
+      window.location.reload();
+      }}
+  >
+      <option value="en">English</option>
+      <option value="hi">हिन्दी (Hindi)</option>
+      <option value="ur">اردو (Urdu)</option>
+      </select>
+      </div>
+    </div>
+  </div>
     </header>
   );
 }
@@ -125,6 +137,38 @@ function Footer() {
 }
 
 function HomePage() {
+  const [language, setLanguage] = useState(
+    localStorage.getItem("hostelcare-language") || "en"
+  );
+
+  const translations = {
+    en: {
+      badge: "AMU HOSTEL COMPLAINT PORTAL",
+      title1: "Your Hostel.",
+      title2: "Your Comfort.",
+      title3: "Our Responsibility.",
+      description:
+        "Report hostel problems, track complaints, and get the help you need. Making hostel life better, one complaint at a time.",
+    },
+    hi: {
+      badge: "एएमयू हॉस्टल शिकायत पोर्टल",
+      title1: "आपका हॉस्टल।",
+      title2: "आपकी सुविधा।",
+      title3: "हमारी जिम्मेदारी।",
+      description:
+        "हॉस्टल की समस्याओं की शिकायत करें, उनकी स्थिति देखें और सहायता प्राप्त करें।",
+    },
+    ur: {
+      badge: "اے ایم یو ہاسٹل شکایت پورٹل",
+      title1: "آپ کا ہاسٹل۔",
+      title2: "آپ کا سکون۔",
+      title3: "ہماری ذمہ داری۔",
+      description:
+        "ہاسٹل کے مسائل کی شکایت درج کریں، ان کی صورتحال دیکھیں اور مدد حاصل کریں۔",
+    },
+  };
+
+  const t = translations[language];
   return (
     <>
       <Header />
@@ -134,20 +178,19 @@ function HomePage() {
           <div className="hero-content">
             <div className="hero-badge">
               <span className="status-dot" />
-              AMU HOSTEL COMPLAINT PORTAL
+              {t.badge}
             </div>
 
             <h1>
-              Your Hostel.
+              {t.title1}
               <br />
-              Your Comfort.
+              {t.title2}
               <br />
-              <span>Our Responsibility.</span>
+              <span>{t.title3}</span>
             </h1>
 
             <p className="hero-description">
-              Report hostel problems, track complaints, and get the help you
-              need. Making hostel life better, one complaint at a time.
+              {t.description}
             </p>
 
             <div className="hero-buttons">
