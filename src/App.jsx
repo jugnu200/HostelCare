@@ -43,7 +43,10 @@ function Header() {
   return (
     <header className="site-header">
       <a className="brand" href="#/">
-        <span className="brand-icon">H</span>
+        <img
+         className="brand-icon"
+         src={`${import.meta.env.BASE_URL}amu-logo.jpg`}
+         alt="Aligarh Muslim University logo"/>
         <span className="brand-text">
           <strong>HostelCare</strong>
           <small>AMU HOSTEL SUPPORT</small>
@@ -121,7 +124,10 @@ function Footer() {
   return (
     <footer className="site-footer">
       <a className="brand footer-brand" href="#/">
-        <span className="brand-icon">H</span>
+        <img
+          className="brand-icon"
+          src={`${import.meta.env.BASE_URL}amu-logo.jpg`}
+          alt="Aligarh Muslim University logo"/>
         <span className="brand-text">
           <strong>HostelCare</strong>
           <small>AMU HOSTEL SUPPORT</small>

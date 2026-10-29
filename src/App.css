@@ -1251,3 +1251,43 @@ background-repeat: no-repeat;
     right: 0;
   }
 }
+/* AMU-inspired green and white theme */
+:root {
+  --primary: #176b3a;
+  --primary-dark: #104d2b;
+  --secondary: #e8f3eb;
+  --muted: #657568;
+}
+
+.site-header {
+  background: #ffffff;
+}
+
+.brand-icon {
+  background: #176b3a;
+  color: #ffffff;
+}
+
+.button-primary,
+.header-actions .button {
+  background: #176b3a;
+  border-color: #176b3a;
+  color: #ffffff;
+}
+
+.button-primary:hover,
+.header-actions .button:hover {
+  background: #104d2b;
+}
+
+.hero {
+  background-color: #104d2b;
+}
+
+.hero h1 span {
+  color: #b9e2c5;
+}
+
+footer {
+  background: #ffffff;
+}
